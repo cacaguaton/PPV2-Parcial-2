@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class MovimientoSimple : MonoBehaviour
 {
@@ -15,9 +13,9 @@ public class MovimientoSimple : MonoBehaviour
         float movimientoVertical = Input.GetAxis("Vertical");
 
         // Calcular el vector de movimiento
-        Vector movimiento = new Vector3(movimientoHorizontal, 0f, movimientoVertical);
+        Vector3 movimiento = new Vector3(movimientoHorizontal, 0f, movimientoVertical);
 
         // Mover el objeto en la dirección calculada
-        transform.Translate( movimiento * velocidad * time.deltaTime, Space.World);
+        transform.Translate( movimiento * velocidad * Time.deltaTime, Space.World);
     }
 }
